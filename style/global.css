@@ -1,0 +1,429 @@
+html{
+  scroll-snap-type: y proximity;
+}
+/* header */
+#logo_d{
+    width:20%;
+    height:auto;
+}
+
+header{
+    position : fixed;
+    z-index:10;
+    margin : 10px;
+}
+/*Menu*/
+.menu {
+  position: relative;
+  right : 95vh;
+  background: #000000a8;
+  width: 2em;
+  height: 2em;
+  border-radius: 5em;
+  margin: auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
+  cursor: pointer;
+  border: 1em solid #ffffff13;
+  z-index:35;
+}
+.menu:after {
+  content: "";
+  position: absolute;
+  top: -0.4em;
+  left: -0.5em;
+  width: 1em;
+  height: 0.2em;
+  border-top: 0.6em double #ffffff;
+  border-bottom: 0.2em solid #ffffff;
+}
+.menu ul { /*cache les points des ul*/
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  width: 5em;
+  height: 1.4em;
+  padding: 0.2em;
+  margin-top: 0.2em;
+  text-align: center;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+  transition: all 1s;
+  /*fond de la sélection*/
+  background: #fff0f000;
+  opacity: 0;
+  z-index: -1;
+}
+.menu:hover li {
+  opacity: 1;
+}
+.menu:hover ul::before { /*pour que le menu reste ouvert lors de la sélection */
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  left: 50%;
+  top: -5.0em;
+  border-width: 6.5em;
+  border-radius: 0 7.5em 7.5em 0;
+  border-left: 0;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0);
+  z-index: -1;
+  cursor: default;
+}
+
+.menu a { /*texte dans menu*/
+  color: white;
+  text-decoration: none;
+}
+.menu ul {
+  transform: rotate(180deg) translateY(-2em);
+  transition: 1s all;
+}
+.menu:hover ul {
+  transform: rotate(0deg) translateY(-1em);
+}
+.menu li:hover {
+  background: rgba(255, 255, 255, 0);
+  z-index: 10;
+}
+
+.menu li:nth-of-type(1) {
+  transform: rotate(-90deg);
+  position: absolute;
+  left: -1.2em;
+  top: -4.2em;
+}
+.menu li:nth-of-type(2) {
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 2em;
+  top: -3em;
+}
+.menu li:nth-of-type(3) {
+  position: absolute;
+  left: 3.4em;
+  top: 0.3em;
+}
+.menu li:nth-of-type(4) {
+  transform: rotate(45deg);
+  position: absolute;
+  left: 2em;
+  top: 3.7em;
+}
+.menu li:nth-of-type(5) {
+  transform: rotate(90deg);
+  position: absolute;
+  left: -1.2em;
+  top: 5em;
+}
+
+
+/*main*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+ section:nth-of-type(1)>h2{
+   font-size:3vh;
+   color:white;
+   text-align: center;
+   margin-bottom:10px;
+   width:35vw;
+ }
+
+section {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    scroll-snap-align: start;
+  }
+
+    /*page d'accueil*/
+  section:nth-of-type(1) {
+    background-image: url('../medias/images/dune_wpp.jpg');
+    padding:50px 50px;
+    display : flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+    /*a propos du film */
+  section:nth-of-type(2) {
+    background-image: url('../medias/images/Dune04.webp');
+  }
+    /*personnage*/
+  section:nth-of-type(3) {
+    background-image: url('../medias/images/072.jpg');
+  }
+    /*images et vidéos*/
+  section:nth-of-type(4) {
+    background-image: url('../medias/images/02.jpg');
+  }
+    /*localisation*/
+  section:nth-of-type(5) {
+    background-image: url('../medias/images/dune-sharon-duncan-brewster.jpeg');
+  }
+
+  /*video*/
+  #trailer  {
+    width: 35vw;
+    height: calc(35vw * 390 / 640);
+    display: block;
+    z-index: 20;
+  }
+
+  .scroll {
+    position: fixed !important;
+    width: 30vw !important;
+    height: calc(30vw * 3 / 4) !important;
+    top: 5vh !important;
+    right: 5% !important;
+  }
+
+/*About the film*/
+
+section:nth-of-type(2)>img{
+  height: 30vh;
+  width:auto;
+  margin-left:65vw;
+  margin-top:25vh;
+  position:absolute;
+  z-index:15;
+}
+
+#bande{
+  background-color: rgb(190, 178, 178, 50%) ;
+  height: 35vh;
+  padding : 50px;
+  position : absolute;
+  top : 66em;
+}
+
+#bande>h3{
+  color : white;
+}
+
+#bande>p{
+  color : white;
+  column-count: 3;
+  text-align: justify;
+}
+
+/*carrousel*/
+section:nth-of-type(3)>div{
+  margin-left:25vh;
+}
+#characters>h1{
+  color:white;
+  left:15em;
+  top:75em;
+  position:absolute;
+}
+
+#bande_char{
+  background-color: rgb(190, 178, 178, 50%) ;
+  height: 30vh;
+  width:100%;
+  right:0;
+  position: absolute;
+  top:115em;
+}
+
+#carrousel {
+  width: 30vw;
+  height: 70vh;
+  position: absolute;
+  z-index:5;
+  left:50em;
+  bottom:5em;
+  z-index:20;
+  bottom : 10em;
+ }
+ 
+#carrousel>img {
+ position: absolute;
+ top:50px;
+ left: 0px;
+ height: 100%;
+ width: 100%;
+ object-fit: cover;
+ z-index:20;
+ }
+ 
+#carrousel>img:not(:first-of-type) {
+ display: none;
+ }
+ 
+#bouton{
+  position :absolute;
+  left : 48.5em;
+  top : 10em;
+}
+
+span {
+ display: inline-block;
+ width: 2vw;
+ height: 2vw;
+ margin: 0 1vw;
+ border-radius: 50%;
+ background-color: white;
+ cursor: pointer;
+ }
+
+/*videos & images*/
+
+.mySlides>img{
+  position: absolute;
+  top:20vh;
+  left:40vh;
+  height:10em;
+}
+
+#bande_vid{
+  background-color: rgb(190, 178, 178, 50%) ;
+  height: 65vh;
+  width: 100%;
+  padding : 50px;
+  position : absolute;
+  top:145em;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+.slideshow-container {
+  width: 60%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 80%;
+  width: auto;
+  margin-top: -22px;
+  padding: 0;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev{
+  left:3em;
+}
+
+.next{
+  right:3em;
+}
+
+/* Cache les images */
+
+.slideshow-container>div>img{
+  width:40%;
+}
+
+.slideshow-container {
+  width: 60%;
+  max-width: 110%;
+  height: 60%;
+  position: absolute;
+  margin: auto;
+  display: flex;
+  bottom: 40%;
+  left: 22vw;
+}
+
+/*carte*/
+#bande_map{
+  background-color: rgb(190, 178, 178, 50%) ;
+  height: 65vh;
+  width: 100%;
+  padding : 50px;
+  position : absolute;
+  top:185em;
+}
+
+#carte {
+  height: 60vh;
+  width: 60vh;
+  left: 15em;
+  bottom:3em;
+}
+
+#bande_map>article{
+  position : absolute;
+  left:100vh;
+  bottom:5vh;
+}
+
+#bande_map>button{
+  position : absolute;
+  left:100vh;
+  bottom:9vh;
+}
+/*footer*/
+footer{
+    position : fixed;
+    z-index:10;
+    /*position horizontale du footer*/
+    left:95vw;
+    top:50px;
+    bottom:50px;
+    display: flex;
+    flex-direction: column;
+    align-items:left;
+}
+
+#wb_logo{
+    padding : 5px;
+    width: 40px;
+    height: 40px;
+}
+
+#lg_logo{
+    padding : 5px;
+    width: 40px;
+    height: 40px;
+}
+
+#fb_logo{
+    padding : 5px;
+    width: 40px;
+    height: 40px;
+}
+
+#ig_logo{
+    padding : 5px;
+    width: 40px;
+    height: 40px;
+}
+
+#tw_logo{
+    padding : 5px;
+    width: 40px;
+    height: 40px;
+}
